@@ -1,4 +1,4 @@
-import { Moon, Sun, PencilLine } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 
 export default function Navbar({ isDarkMode, toggleTheme, isEditMode, toggleEditMode }) {
   const navLinks = [
@@ -32,17 +32,12 @@ export default function Navbar({ isDarkMode, toggleTheme, isEditMode, toggleEdit
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <button
-              onClick={toggleEditMode}
-              className={`p-2 rounded-full transition-colors ${
-                isEditMode 
-                  ? 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400' 
-                  : 'text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800'
-              }`}
-              title="Toggle Edit Mode"
-            >
-              <PencilLine className="w-5 h-5" />
-            </button>
+            {isEditMode && (
+              <span className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-semibold border border-green-200 dark:border-green-800">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                Owner Mode Active
+              </span>
+            )}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 transition-colors"
