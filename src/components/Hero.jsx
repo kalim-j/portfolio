@@ -110,12 +110,14 @@ export default function Hero({ isEditMode }) {
           View Projects
         </a>
         <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-          <button
-            onClick={handlePrint}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2 justify-center"
           >
-            <Download className="w-4 h-4" /> Download Resume (PDF)
-          </button>
+            <Download className="w-4 h-4" /> Download Resume
+          </a>
         </div>
       </div>
     </section>
