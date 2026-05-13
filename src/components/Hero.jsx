@@ -110,23 +110,12 @@ export default function Hero({ isEditMode }) {
           View Projects
         </a>
         <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-          <a
-            href={resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-bold transition-colors flex items-center gap-2 justify-center"
+          <button
+            onClick={handlePrint}
+            className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2 justify-center"
           >
-            <Download className="w-4 h-4" /> Download Resume
-          </a>
-          {isEditMode && (
-            <button
-              onClick={handlePrint}
-              className="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-xl text-xs font-bold border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-200 transition-colors flex items-center gap-2"
-              title="Generate printable PDF from current data"
-            >
-              <Download className="w-3 h-3" /> Export as PDF (Print)
-            </button>
-          )}
+            <Download className="w-4 h-4" /> Download Resume (PDF)
+          </button>
         </div>
       </div>
     </section>

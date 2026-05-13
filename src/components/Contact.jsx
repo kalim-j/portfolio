@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Send, MessageSquare } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -12,7 +12,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 glass dark:glass-dark rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700">
           <div className="lg:col-span-2 bg-indigo-600 p-10 text-white flex flex-col justify-between">
             <div>
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
@@ -34,6 +34,12 @@ export default function Contact() {
                   </a>
                 </div>
                 <div className="flex items-center gap-4">
+                  <MessageSquare className="w-6 h-6 text-indigo-200" />
+                  <a href="https://wa.me/919363554551" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-200 transition-colors">
+                    WhatsApp: +91 9363554551
+                  </a>
+                </div>
+                <div className="flex items-center gap-4">
                   <MapPin className="w-6 h-6 text-indigo-200" />
                   <span>Tamil Nadu, Dharmapuri</span>
                 </div>
@@ -41,6 +47,9 @@ export default function Contact() {
             </div>
 
             <div className="flex gap-4 mt-12">
+              <a href="https://wa.me/919363554551" target="_blank" rel="noopener noreferrer" className="p-3 bg-indigo-700 hover:bg-indigo-800 rounded-full transition-colors" title="WhatsApp">
+                <MessageSquare className="w-5 h-5" />
+              </a>
               <a href="https://www.linkedin.com/in/kalim-j" target="_blank" rel="noopener noreferrer" className="p-3 bg-indigo-700 hover:bg-indigo-800 rounded-full transition-colors" title="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>

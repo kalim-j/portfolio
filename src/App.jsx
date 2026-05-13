@@ -85,6 +85,19 @@ function App() {
         <p>&copy; 2026 KALIM J. All rights reserved.</p>
       </footer>
 
+      <a
+        href="https://wa.me/919363554551"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 left-8 p-4 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 transition-all z-50 flex items-center justify-center group"
+        title="Chat on WhatsApp"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 font-bold whitespace-nowrap">
+          Chat with me
+        </span>
+      </a>
+
       <button
         onClick={toggleEditMode}
         className={`fixed bottom-8 right-8 px-5 py-4 rounded-full shadow-2xl transition-all z-50 flex items-center gap-2 font-medium ${
