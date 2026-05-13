@@ -6,6 +6,7 @@ export default function Navbar({ isDarkMode, toggleTheme, isEditMode, toggleEdit
     { name: 'Skills', href: '#skills' },
     { name: 'Achievements', href: '#achievements' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];
 

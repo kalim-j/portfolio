@@ -7,7 +7,7 @@ export default function Skills() {
     },
     {
       title: "Soft Skills",
-      skills: ["Curiosity & Learning Agility", "Time Management", "Teamwork"],
+      skills: ["Adaptability", "Time Management", "Teamwork"],
       color: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 border-purple-200 dark:border-purple-800"
     },
     {

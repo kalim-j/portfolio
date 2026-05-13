@@ -3,7 +3,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Achievements from './components/Achievements';
-import ExperienceProjects from './components/ExperienceProjects';
+import Experience from './components/Experience';
+import Education from './components/Education';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 import { Eye, EyeOff, Lock, X, Unlock } from 'lucide-react';
 
@@ -73,7 +75,9 @@ function App() {
         <Hero isEditMode={isEditMode} />
         <Skills />
         <Achievements isEditMode={isEditMode} />
-        <ExperienceProjects isEditMode={isEditMode} />
+        <Experience isEditMode={isEditMode} />
+        <Education />
+        <Projects isEditMode={isEditMode} />
         <Contact />
       </main>
 

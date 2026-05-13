@@ -4,35 +4,24 @@ import { Edit2, Trash2, X, Check } from 'lucide-react';
 const initialAchievements = [
   {
     id: 1,
-    emoji: "🏅",
-    title: "Associate Data Analyst in SQL",
-    issuer: "DataCamp",
-    date: "Nov 2025 – Dec 2025",
-    description: "Completed hands-on data analyst certification covering SQL querying, data manipulation, and analytics workflows."
-  },
-  {
-    id: 2,
-    emoji: "☁️",
-    title: "AWS Academy Machine Learning Foundations",
-    issuer: "Amazon Web Services (AWS)",
-    date: "Dec 2025 – Jan 2026",
-    description: "Gained foundational knowledge in machine learning concepts, AWS ML services, and model deployment basics."
-  },
-  {
-    id: 3,
     emoji: "🎨",
     title: "UI/UX Design",
     issuer: "Coursera",
-    date: "",
-    description: "Learned user interface and user experience design principles, wireframing, and prototyping techniques."
+    description: "Learned UI/UX design principles, wireframing, and prototyping techniques."
   },
   {
-    id: 4,
-    emoji: "💻",
-    title: "Data Science Internship",
-    issuer: "Micro Infotech, Coimbatore",
-    date: "Feb 2025",
-    description: "Developed analytical Python scripts reducing manual analysis time by ~30%. Designed a feedback system improving customer satisfaction by 10–15%."
+    id: 2,
+    emoji: "🏅",
+    title: "Associate Data Analyst in SQL",
+    issuer: "DataCamp",
+    description: "Completed hands-on certification covering SQL querying, data manipulation, and analytics workflows."
+  },
+  {
+    id: 3,
+    emoji: "☁️",
+    title: "AWS Academy Machine Learning Foundations",
+    issuer: "Amazon Web Services (AWS)",
+    description: "Gained foundational knowledge in ML concepts, AWS ML services, and model deployment basics."
   }
 ];
 
