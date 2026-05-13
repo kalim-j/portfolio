@@ -5,19 +5,26 @@ export default function Hero({ isEditMode }) {
   const defaultBio = "Passionate Computer Science student with strong interest in software development, data structures, and system design. Skilled in building real-world applications and solving problems using modern technologies. Seeking opportunities to apply technical knowledge and contribute to impactful projects.";
   
   const [bio, setBio] = useState(defaultBio);
-  const [isEditingBio, setIsEditingBio] = useState(false);
+  const [resumeUrl, setResumeUrl] = useState('/resume.pdf');
+  const [isEditingHero, setIsEditingHero] = useState(false);
   const [tempBio, setTempBio] = useState(bio);
+  const [tempResumeUrl, setTempResumeUrl] = useState(resumeUrl);
 
-  const handleSaveBio = () => {
+  const handleSaveHero = () => {
     setBio(tempBio);
-    setIsEditingBio(false);
+    setResumeUrl(tempResumeUrl);
+    setIsEditingHero(false);
+  };
+
+  const handlePrint = () => {
+    window.print();
   };
 
   return (
     <section id="about" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center min-h-[90vh] justify-center relative">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
       
-      <div className="w-32 h-32 rounded-full bg-gradient-to-tr from-indigo-600 to-indigo-400 p-1 mb-8 shadow-2xl animate-fade-in-up">
+      <div className="w-32 h-32 rounded-full bg-gradient-to-tr from-indigo-600 to-indigo-400 p-1 mb-8 shadow-2xl animate-fade-in-up print:hidden">
         <div className="w-full h-full bg-white dark:bg-gray-900 rounded-full flex items-center justify-center border-4 border-white dark:border-gray-900">
           <span className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">
             KJ
@@ -38,20 +45,33 @@ export default function Hero({ isEditMode }) {
       </div>
 
       <div className="max-w-2xl mx-auto mb-10 relative animate-fade-in-up animation-delay-400 group">
-        {isEditingBio ? (
-          <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg border border-indigo-100 dark:border-indigo-900/30">
-            <textarea
-              value={tempBio}
-              onChange={(e) => setTempBio(e.target.value)}
-              className="w-full bg-transparent text-gray-600 dark:text-gray-300 outline-none resize-none min-h-[120px]"
-              autoFocus
-            />
+        {isEditingHero ? (
+          <div className="glass-card p-6 rounded-3xl shadow-2xl space-y-4 text-left">
+            <div className="space-y-2">
+              <label className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Bio Description</label>
+              <textarea
+                value={tempBio}
+                onChange={(e) => setTempBio(e.target.value)}
+                className="w-full bg-white/50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 outline-none resize-none min-h-[120px]"
+                autoFocus
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Resume URL (Google Drive/Dropbox link)</label>
+              <input
+                type="text"
+                value={tempResumeUrl}
+                onChange={(e) => setTempResumeUrl(e.target.value)}
+                className="w-full bg-white/50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 outline-none"
+                placeholder="https://drive.google.com/..."
+              />
+            </div>
             <div className="flex justify-end mt-2">
               <button
-                onClick={handleSaveBio}
-                className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm transition-colors"
+                onClick={handleSaveHero}
+                className="flex items-center gap-2 px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition-all shadow-lg shadow-indigo-500/25"
               >
-                <Check className="w-4 h-4" /> Save Bio
+                <Check className="w-4 h-4" /> Save Changes
               </button>
             </div>
           </div>
@@ -64,7 +84,8 @@ export default function Hero({ isEditMode }) {
               <button
                 onClick={() => {
                   setTempBio(bio);
-                  setIsEditingBio(true);
+                  setTempResumeUrl(resumeUrl);
+                  setIsEditingHero(true);
                 }}
                 className="absolute -top-4 -right-4 p-2 bg-white dark:bg-gray-800 text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-full shadow-md border border-gray-100 dark:border-gray-700 transition-all opacity-0 group-hover:opacity-100"
               >
@@ -75,25 +96,38 @@ export default function Hero({ isEditMode }) {
         )}
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-4 items-center animate-fade-in-up animation-delay-400">
+      <div className="flex flex-wrap gap-4 items-center justify-center animate-fade-in-up animation-delay-400 print:hidden">
         <a
           href="#contact"
-          className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-medium transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2 w-full sm:w-auto justify-center"
+          className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2 w-full sm:w-auto justify-center"
         >
           Get in Touch <ArrowRight className="w-4 h-4" />
         </a>
         <a
           href="#projects"
-          className="px-8 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-full font-medium transition-all shadow-sm flex items-center gap-2 w-full sm:w-auto justify-center"
+          className="px-8 py-3 glass dark:glass-dark hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-full font-bold transition-all shadow-sm flex items-center gap-2 w-full sm:w-auto justify-center"
         >
           View Projects
         </a>
-        <a
-          href="/resume.pdf"
-          className="px-8 py-3 text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
-        >
-          <Download className="w-4 h-4" /> Download Resume
-        </a>
+        <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+          <a
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-bold transition-colors flex items-center gap-2 justify-center"
+          >
+            <Download className="w-4 h-4" /> Download Resume
+          </a>
+          {isEditMode && (
+            <button
+              onClick={handlePrint}
+              className="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-xl text-xs font-bold border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-200 transition-colors flex items-center gap-2"
+              title="Generate printable PDF from current data"
+            >
+              <Download className="w-3 h-3" /> Export as PDF (Print)
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );

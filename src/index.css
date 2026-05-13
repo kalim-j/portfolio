@@ -19,3 +19,25 @@
     @apply bg-white/40 dark:bg-gray-800/40 backdrop-blur-lg border border-white/20 dark:border-gray-700/30 shadow-xl;
   }
 }
+
+@media print {
+  nav, footer, .print\:hidden, button, .lucide-edit3, .lucide-pencil-ruler {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .dark {
+    background: white !important;
+    color: black !important;
+  }
+  section {
+    page-break-inside: avoid;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  h2 {
+    color: #4f46e5 !important;
+  }
+}
