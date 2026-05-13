@@ -46,7 +46,7 @@ export default function Education() {
               {item.icon}
             </div>
             
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:shadow-md hover:-translate-y-1">
+            <div className="glass-card rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white leading-tight">
                   {item.degree}

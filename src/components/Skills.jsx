@@ -26,7 +26,7 @@ export default function Skills() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {skillCategories.map((category, idx) => (
-          <div key={idx} className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+          <div key={idx} className="glass-card rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
               {category.title}
             </h3>

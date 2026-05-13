@@ -60,7 +60,7 @@ export default function Achievements({ isEditMode }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {achievements.map((item) => (
-            <div key={item.id} className="relative group bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors">
+            <div key={item.id} className="relative group glass-card rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               {isEditMode && editingId !== item.id && (
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button onClick={() => startEdit(item)} className="p-2 bg-white dark:bg-gray-700 text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600">

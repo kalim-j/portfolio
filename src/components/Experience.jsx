@@ -57,7 +57,7 @@ export default function Experience({ isEditMode }) {
               <Briefcase className="w-4 h-4 text-white" />
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 relative transition-transform hover:-translate-y-1 hover:shadow-md">
+            <div className="glass-card rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
               {isEditMode && editingId !== item.id && (
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-20">
                   <button onClick={() => startEdit(item)} className="p-2 bg-gray-50 dark:bg-gray-700 text-gray-600 hover:text-indigo-600 dark:text-gray-300 rounded-lg shadow-sm">

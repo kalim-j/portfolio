@@ -105,8 +105,8 @@ function App() {
       </button>
 
       {isAuthModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700 animate-fade-in-up">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md p-4 transition-all duration-500">
+          <div className="glass dark:glass-dark rounded-3xl w-full max-w-md shadow-2xl overflow-hidden border border-white/20 dark:border-gray-700/30 animate-fade-in-up">
             <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-900/50">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                 <Lock className="w-5 h-5 text-indigo-500" /> 🔐 Owner Access
