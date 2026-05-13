@@ -11,7 +11,7 @@ const initialProjects = [
     tags: ['Node.js', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://jsk-car-body-shop.vercel.app/',
     githubUrl: 'https://github.com/kalim-j',
-    imgUrl: 'https://api.screenshotone.com/take?url=jsk-car-body-shop.vercel.app&viewport_width=1280&viewport_height=720&format=jpg'
+    imgUrl: 'https://image.thum.io/get/width/1280/crop/720/https://jsk-car-body-shop.vercel.app/'
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const initialProjects = [
     tags: ['Next.js', 'Groq API', 'Firebase', 'Vercel', 'AI'],
     liveUrl: 'https://collegematch-ai.vercel.app/',
     githubUrl: 'https://github.com/kalim-j',
-    imgUrl: 'https://api.screenshotone.com/take?url=collegematch-ai.vercel.app&viewport_width=1280&viewport_height=720&format=jpg'
+    imgUrl: 'https://image.thum.io/get/width/1280/crop/720/https://collegematch-ai.vercel.app/'
   },
   {
     id: 3,
