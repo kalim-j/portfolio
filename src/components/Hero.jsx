@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { ArrowRight, Download, Edit3, Check } from 'lucide-react';
+import { ArrowRight, Download, Edit3, Check, Sparkles } from 'lucide-react';
 
-export default function Hero({ isEditMode }) {
+export default function Hero({ isEditMode, onOpenAISummary }) {
   const defaultBio = "Passionate Computer Science student with strong interest in software development, data structures, and system design. Skilled in building real-world applications and solving problems using modern technologies. Seeking opportunities to apply technical knowledge and contribute to impactful projects.";
   
   const [bio, setBio] = useState(defaultBio);
@@ -110,11 +110,17 @@ export default function Hero({ isEditMode }) {
           View Projects
         </a>
         <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+          <button
+            onClick={onOpenAISummary}
+            className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2 justify-center group"
+          >
+            <Sparkles className="w-4 h-4 group-hover:rotate-12 transition-transform" /> AI Interview Summary
+          </button>
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2 justify-center"
+            className="px-8 py-3 text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-bold transition-colors flex items-center gap-2 justify-center"
           >
             <Download className="w-4 h-4" /> Download Resume
           </a>

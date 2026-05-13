@@ -7,12 +7,14 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import AISummary from './components/AISummary';
 import { Eye, EyeOff, Lock, X, Unlock } from 'lucide-react';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isAISummaryOpen, setIsAISummaryOpen] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -72,7 +74,7 @@ function App() {
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} isEditMode={isEditMode} toggleEditMode={toggleEditMode} />
       
       <main>
-        <Hero isEditMode={isEditMode} />
+        <Hero isEditMode={isEditMode} onOpenAISummary={() => setIsAISummaryOpen(true)} />
         <Skills />
         <Achievements isEditMode={isEditMode} />
         <Experience isEditMode={isEditMode} />
@@ -159,6 +161,8 @@ function App() {
           </div>
         </div>
       )}
+
+      <AISummary isOpen={isAISummaryOpen} onClose={() => setIsAISummaryOpen(false)} />
     </div>
   );
 }
