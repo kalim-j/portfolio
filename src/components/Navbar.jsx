@@ -11,11 +11,11 @@ export default function Navbar({ isDarkMode, toggleTheme, isEditMode, toggleEdit
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full glass dark:glass-dark border-b border-gray-200/50 dark:border-gray-800/50 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="sticky top-0 z-50 w-full bg-black/60 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+      <div className="max-w-[1200px] mx-auto px-[clamp(1rem,4vw,3rem)]">
+        <div className="flex items-center justify-between h-14">
           <div className="flex-shrink-0">
-            <a href="#" className="text-xl font-bold text-indigo-600 dark:text-indigo-400">
+            <a href="#" className="text-base font-[800] tracking-[-0.02em] text-indigo-600 dark:text-indigo-400">
               KJ
             </a>
           </div>
@@ -25,7 +25,7 @@ export default function Navbar({ isDarkMode, toggleTheme, isEditMode, toggleEdit
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  className="nav-link-inactive text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
                   {link.name}
                 </a>

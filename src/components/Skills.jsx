@@ -18,15 +18,16 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="skills" className="py-16 md:py-[clamp(3rem,6vh,6rem)] px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Skills & Expertise</h2>
-        <div className="w-20 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+        <p className="text-indigo-400 text-[0.875rem] tracking-[0.15em] uppercase font-[800] mb-2">▸ WHAT I DO</p>
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-[800] tracking-[-0.02em] bg-gradient-to-br from-[#ffffff] via-[#a5b4fc] to-[#818cf8] text-transparent bg-clip-text mb-4">Skills & Expertise</h2>
+        <div className="gradient-divider"></div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {skillCategories.map((category, idx) => (
-          <div key={idx} className="glass-card rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+          <div key={idx} className="glass-card p-[clamp(1rem,2vw,1.5rem)]  group">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
               {category.title}
             </h3>

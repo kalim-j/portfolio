@@ -68,25 +68,22 @@ export default function Projects({ isEditMode }) {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-16 md:py-[clamp(3rem,6vh,6rem)] bg-gray-50 dark:bg-gray-900/50">
+      <div className="max-w-[1200px] mx-auto px-[clamp(1rem,4vw,3rem)]">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+          <p className="text-indigo-400 text-[0.875rem] tracking-[0.15em] uppercase font-[800] mb-2">▸ MY WORK</p>
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-[800] tracking-[-0.02em] bg-gradient-to-br from-[#ffffff] via-[#a5b4fc] to-[#818cf8] text-transparent bg-clip-text mb-4">Featured Projects</h2>
+          <div className="gradient-divider"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-8">
           {projects.map((project) => (
-            <div key={project.id} className="group relative glass-card rounded-3xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div key={project.id} className="group relative glass-card overflow-hidden ">
               
               {/* Project Image / Preview */}
               <div className="relative h-48 overflow-hidden bg-gradient-to-br from-indigo-500 to-purple-600 cursor-pointer" onClick={() => window.open(project.liveUrl, '_blank')}>
                 {project.imgUrl ? (
-                  <img 
-                    src={project.imgUrl} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
+                  <img loading="lazy" loading="lazy"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-6xl">
@@ -97,11 +94,11 @@ export default function Projects({ isEditMode }) {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-[clamp(1rem,2vw,1.5rem)]">
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white line-clamp-1">{project.title}</h3>
-                    <p className="text-indigo-600 dark:text-indigo-400 text-sm font-medium">{project.subtitle}</p>
+                    <h3 className="text-xl font-[800] tracking-[-0.02em] text-gray-900 dark:text-white line-clamp-1">{project.title}</h3>
+                    <p className="text-indigo-400 text-[0.875rem] tracking-[0.15em] uppercase font-[800]">{project.subtitle}</p>
                   </div>
                   {isEditMode && (
                     <div className="flex gap-2">
@@ -115,13 +112,13 @@ export default function Projects({ isEditMode }) {
                   )}
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-3 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-3  leading-relaxed text-[clamp(0.875rem,1.1vw,1rem)]">
                   {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, idx) => (
-                    <span key={idx} className="px-2.5 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-lg text-xs font-bold">
+                    <span key={idx} className="px-2.5 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-lg text-xs font-[800] tracking-[-0.02em]">
                       {tag}
                     </span>
                   ))}
@@ -132,7 +129,7 @@ export default function Projects({ isEditMode }) {
                     href={project.liveUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-indigo-500/20"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl btn-shimmer text-sm font-[800] tracking-[-0.02em] transition-all shadow-lg shadow-indigo-500/20"
                   >
                     <ExternalLink className="w-4 h-4" /> 🚀 Live Demo
                   </a>
@@ -140,7 +137,7 @@ export default function Projects({ isEditMode }) {
                     href={project.githubUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-xl text-sm font-bold transition-all"
+                    className="flex items-center justify-center px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-xl text-sm font-[800] tracking-[-0.02em] transition-all"
                   >
                     <Github className="w-4 h-4" />
                   </a>
@@ -151,7 +148,7 @@ export default function Projects({ isEditMode }) {
               {editingId === project.id && (
                 <div className="absolute inset-0 z-20 bg-white dark:bg-gray-800 p-4 overflow-y-auto">
                   <div className="flex justify-between items-center mb-4">
-                    <h4 className="font-bold text-gray-900 dark:text-white">Edit Project</h4>
+                    <h4 className="font-[800] tracking-[-0.02em] text-gray-900 dark:text-white">Edit Project</h4>
                     <button onClick={cancelEdit} className="text-gray-500 hover:text-gray-700"><X className="w-5 h-5" /></button>
                   </div>
                   <div className="space-y-3">
@@ -161,7 +158,7 @@ export default function Projects({ isEditMode }) {
                     <input className="w-full p-2 text-sm rounded border dark:bg-gray-700 dark:border-gray-600 outline-none" value={editFormData.tagsString} onChange={e => setEditFormData({...editFormData, tagsString: e.target.value})} placeholder="Tags (comma separated)" />
                     <input className="w-full p-2 text-sm rounded border dark:bg-gray-700 dark:border-gray-600 outline-none" value={editFormData.liveUrl} onChange={e => setEditFormData({...editFormData, liveUrl: e.target.value})} placeholder="Live URL" />
                     <input className="w-full p-2 text-sm rounded border dark:bg-gray-700 dark:border-gray-600 outline-none" value={editFormData.imgUrl || ''} onChange={e => setEditFormData({...editFormData, imgUrl: e.target.value})} placeholder="Image URL (screenshot API)" />
-                    <button onClick={saveEdit} className="w-full py-2 bg-indigo-600 text-white rounded-lg font-bold flex items-center justify-center gap-2">
+                    <button onClick={saveEdit} className="w-full py-2 bg-indigo-600 text-white rounded-lg font-[800] tracking-[-0.02em] flex items-center justify-center gap-2">
                       <Check className="w-4 h-4" /> Save Changes
                     </button>
                   </div>

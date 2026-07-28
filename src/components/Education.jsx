@@ -33,10 +33,11 @@ const educationData = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <section id="education" className="py-16 md:py-[clamp(3rem,6vh,6rem)] px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Education</h2>
-        <div className="w-20 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+        <p className="text-indigo-400 text-[0.875rem] tracking-[0.15em] uppercase font-[800] mb-2">▸ MY JOURNEY</p>
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-[800] tracking-[-0.02em] bg-gradient-to-br from-[#ffffff] via-[#a5b4fc] to-[#818cf8] text-transparent bg-clip-text mb-4">Education</h2>
+        <div className="gradient-divider"></div>
       </div>
 
       <div className="relative border-l-2 border-indigo-200 dark:border-indigo-900/50 ml-4 md:ml-6 space-y-12">
@@ -46,12 +47,12 @@ export default function Education() {
               {item.icon}
             </div>
             
-            <div className="glass-card rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+            <div className="glass-card p-[clamp(1rem,2vw,1.5rem)]  relative">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white leading-tight">
+                <h3 className="text-xl font-[800] tracking-[-0.02em] text-gray-900 dark:text-white leading-tight">
                   {item.degree}
                 </h3>
-                <span className="inline-block px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-full text-xs font-bold whitespace-nowrap">
+                <span className="inline-block px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-full text-xs font-[800] tracking-[-0.02em] whitespace-nowrap">
                   {item.period}
                 </span>
               </div>
@@ -60,7 +61,7 @@ export default function Education() {
                 <p className="text-gray-600 dark:text-gray-300 font-medium">
                   {item.institution}
                 </p>
-                <p className="text-indigo-600 dark:text-indigo-400 font-bold text-sm">
+                <p className="text-indigo-600 dark:text-indigo-400 font-[800] tracking-[-0.02em] text-sm">
                   Score: {item.score}
                 </p>
               </div>

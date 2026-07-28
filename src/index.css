@@ -2,42 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .animation-delay-200 {
-    animation-delay: 200ms;
+@layer base {
+  html {
+    font-size: clamp(14px, 1vw + 0.25rem, 17px);
+    scroll-behavior: smooth;
   }
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
-  .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
-  }
-  .glass-dark {
-    @apply bg-gray-900/70 backdrop-blur-md border border-gray-800/50 shadow-2xl;
-  }
-  .glass-card {
-    @apply bg-white/40 dark:bg-gray-800/40 backdrop-blur-lg border border-white/20 dark:border-gray-700/30 shadow-xl;
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #050510;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 
-@media print {
-  nav, footer, .print\:hidden, button, .lucide-edit3, .lucide-pencil-ruler {
-    display: none !important;
+@layer utilities {
+  .glass-card {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  body {
-    background: white !important;
-    color: black !important;
-  }
-  .dark {
-    background: white !important;
-    color: black !important;
-  }
-  section {
-    page-break-inside: avoid;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-  h2 {
-    color: #4f46e5 !important;
+  
+  .glass-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(99, 102, 241, 0.15);
+    transform: translateY(-6px);
   }
 }
+
+/* AWS Pulse Gold border animation */
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(251, 191, 36, 0);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.2);
+  }
+}
+.animate-pulse-gold {
+  animation: pulse-gold 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) { 
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } 
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 2px; }
+::selection { background: #6366f1; color: white; }
+*:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+
+@keyframes spin-ring { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
+.animate-spin-ring { animation: spin-ring 6s linear infinite; }
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.animate-blink-cursor { animation: blink 0.7s step-end infinite; }
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+.animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+
+/* Button shimmer */
+.btn-shimmer { position: relative; overflow: hidden; }
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: transform 0.6s ease;
+}
+.btn-shimmer:hover::before {
+  transform: translateX(100%);
+}
+
+.gradient-divider {
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.3), transparent);
+  height: 1px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.nav-link-active {
+  position: relative;
+}
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #6366f1;
+  transition: width 0.3s ease;
+}
+
+.nav-link-inactive::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #6366f1;
+  transition: width 0.3s ease;
+}
+.nav-link-inactive:hover::after {
+  width: 100%;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 20px 0 rgba(99, 102, 241, 0.8); }
+}
+.hover\:animate-pulse-glow:hover { animation: pulse-glow 1.5s infinite; }

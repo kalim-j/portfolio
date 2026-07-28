@@ -6,8 +6,8 @@ export default function AISummary({ isOpen, onClose }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in">
       <div className="glass dark:glass-dark rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden border border-white/20 dark:border-gray-700/30 animate-fade-in-up">
-        <div className="p-6 border-b border-white/10 flex justify-between items-center bg-gradient-to-r from-indigo-600/20 to-purple-600/20">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+        <div className="p-[clamp(1rem,2vw,1.5rem)] border-b border-white/10 flex justify-between items-center bg-gradient-to-r from-indigo-600/20 to-purple-600/20">
+          <h3 className="text-xl font-[800] tracking-[-0.02em] text-gray-900 dark:text-white flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-indigo-500 animate-pulse" /> 
             AI Interview Summary
           </h3>
@@ -16,10 +16,10 @@ export default function AISummary({ isOpen, onClose }) {
           </button>
         </div>
 
-        <div className="p-8 max-h-[80vh] overflow-y-auto space-y-8">
+        <div className="p-[clamp(1rem,2vw,1.5rem)] max-h-[80vh] overflow-y-auto space-y-8">
           {/* Executive Summary */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold uppercase text-xs tracking-wider">
+            <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-[800] tracking-[-0.02em] uppercase text-xs tracking-wider">
               <Brain className="w-4 h-4" /> Executive Profile
             </div>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic border-l-4 border-indigo-500 pl-4 py-1">
@@ -30,7 +30,7 @@ export default function AISummary({ isOpen, onClose }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Core Pillars */}
             <div className="space-y-4">
-              <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold uppercase text-xs tracking-wider">
+              <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-[800] tracking-[-0.02em] uppercase text-xs tracking-wider">
                 <Target className="w-4 h-4" /> Key Strengths
               </div>
               <ul className="space-y-2">
@@ -44,12 +44,12 @@ export default function AISummary({ isOpen, onClose }) {
 
             {/* Tech Stack Focus */}
             <div className="space-y-4">
-              <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold uppercase text-xs tracking-wider">
+              <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-[800] tracking-[-0.02em] uppercase text-xs tracking-wider">
                 <Code2 className="w-4 h-4" /> Technical Focus
               </div>
               <div className="flex flex-wrap gap-2">
                 {['Python', 'SQL', 'Java', 'DataViz', 'React'].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold rounded-lg border border-indigo-100 dark:border-indigo-800">
+                  <span key={tech} className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-[800] tracking-[-0.02em] rounded-lg border border-indigo-100 dark:border-indigo-800">
                     {tech}
                   </span>
                 ))}
@@ -58,8 +58,8 @@ export default function AISummary({ isOpen, onClose }) {
           </div>
 
           {/* Interview Strategy */}
-          <div className="p-6 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-2xl border border-indigo-500/20">
-            <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold uppercase text-xs tracking-wider mb-4">
+          <div className="p-[clamp(1rem,2vw,1.5rem)] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-2xl border border-indigo-500/20">
+            <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-[800] tracking-[-0.02em] uppercase text-xs tracking-wider mb-4">
               <Award className="w-4 h-4" /> Interview Talking Points
             </div>
             <div className="space-y-4 text-sm text-gray-700 dark:text-gray-300">

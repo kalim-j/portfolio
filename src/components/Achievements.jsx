@@ -51,16 +51,17 @@ export default function Achievements({ isEditMode }) {
   };
 
   return (
-    <section id="achievements" className="py-20 bg-white dark:bg-gray-800/50 border-y border-gray-100 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="achievements" className="py-16 md:py-[clamp(3rem,6vh,6rem)] bg-white dark:bg-gray-800/50 border-y border-gray-100 dark:border-gray-800">
+      <div className="max-w-[1200px] mx-auto px-[clamp(1rem,4vw,3rem)]">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Achievements & Certifications</h2>
-          <div className="w-20 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+          <p className="text-indigo-400 text-[0.875rem] tracking-[0.15em] uppercase font-[800] mb-2">▸ MILESTONES</p>
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-[800] tracking-[-0.02em] bg-gradient-to-br from-[#ffffff] via-[#a5b4fc] to-[#818cf8] text-transparent bg-clip-text mb-4">Achievements & Certifications</h2>
+          <div className="gradient-divider"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {achievements.map((item) => (
-            <div key={item.id} className="relative group glass-card rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div key={item.id} className="relative group glass-card p-[clamp(1rem,2vw,1.5rem)] ">
               {isEditMode && editingId !== item.id && (
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button onClick={() => startEdit(item)} className="p-2 bg-white dark:bg-gray-700 text-gray-600 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600">
@@ -96,11 +97,11 @@ export default function Achievements({ isEditMode }) {
                 <div className="flex gap-4">
                   <div className="text-4xl">{item.emoji}</div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{item.title}</h3>
+                    <h3 className="text-xl font-[800] tracking-[-0.02em] text-gray-900 dark:text-white mb-1">{item.title}</h3>
                     <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400 mb-3">
                       {item.issuer} {item.date && <span className="text-gray-400 dark:text-gray-500">| {item.date}</span>}
                     </p>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm  leading-relaxed text-[clamp(0.875rem,1.1vw,1rem)]">
                       {item.description}
                     </p>
                   </div>

@@ -44,10 +44,11 @@ export default function Experience({ isEditMode }) {
   };
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <section id="experience" className="py-16 md:py-[clamp(3rem,6vh,6rem)] px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Professional Experience</h2>
-        <div className="w-20 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+        <p className="text-indigo-400 text-[0.875rem] tracking-[0.15em] uppercase font-[800] mb-2">▸ CAREER</p>
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-[800] tracking-[-0.02em] bg-gradient-to-br from-[#ffffff] via-[#a5b4fc] to-[#818cf8] text-transparent bg-clip-text mb-4">Professional Experience</h2>
+        <div className="gradient-divider"></div>
       </div>
 
       <div className="relative border-l-2 border-indigo-200 dark:border-indigo-900/50 ml-4 md:ml-6 space-y-12">
@@ -57,7 +58,7 @@ export default function Experience({ isEditMode }) {
               <Briefcase className="w-4 h-4 text-white" />
             </div>
 
-            <div className="glass-card rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+            <div className="glass-card p-[clamp(1rem,2vw,1.5rem)]  relative">
               {isEditMode && editingId !== item.id && (
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-20">
                   <button onClick={() => startEdit(item)} className="p-2 bg-gray-50 dark:bg-gray-700 text-gray-600 hover:text-indigo-600 dark:text-gray-300 rounded-lg shadow-sm">
@@ -90,16 +91,16 @@ export default function Experience({ isEditMode }) {
               ) : (
                 <>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
-                    <span className="text-indigo-600 dark:text-indigo-400 font-bold text-sm whitespace-nowrap">{item.date}</span>
+                    <h3 className="text-xl font-[800] tracking-[-0.02em] text-gray-900 dark:text-white">{item.title}</h3>
+                    <span className="text-indigo-600 dark:text-indigo-400 font-[800] tracking-[-0.02em] text-sm whitespace-nowrap">{item.date}</span>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 font-medium mb-4">{item.company}</p>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm  leading-relaxed text-[clamp(0.875rem,1.1vw,1rem)] mb-6">
                     {item.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {item.tags.map((tag, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-md text-xs font-bold">
+                      <span key={idx} className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-md text-xs font-[800] tracking-[-0.02em]">
                         {tag}
                       </span>
                     ))}
